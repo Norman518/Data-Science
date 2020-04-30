@@ -21,11 +21,9 @@ dataset$Country = factor(
   labels = c(1, 2, 3)
 )
 
-dataset$Purchased = factor(
-  dataset$Purchased,
-  levels = c('No', 'Yes'),
-  labels = c(0, 1)
-)
+dataset$Purchased = factor(dataset$Purchased,
+                           levels = c('No', 'Yes'),
+                           labels = c(0, 1))
 
 
 library(caTools)
@@ -37,4 +35,3 @@ testing_set = subset(dataset, split == FALSE)
 
 training_set[, 2:3] = scale(training_set[, 2:3])
 testing_set[, 2:3] = scale(testing_set[, 2:3])
-
